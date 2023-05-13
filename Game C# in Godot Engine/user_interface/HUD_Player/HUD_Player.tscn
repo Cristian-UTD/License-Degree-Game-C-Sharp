@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbxpwa0vg7nue"]
+
+[ext_resource type="Script" path="res://user_interface/HUD_Player/HUD_Player.cs" id="1_54l0q"]
+[ext_resource type="Texture2D" uid="uid://cp76nyr6382u1" path="res://assets/points_bugs/sprites/bugs_points_test1.png" id="2_4tnrv"]
+[ext_resource type="FontFile" uid="uid://tkyc64ralymn" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_yjlmn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2upbq"]
+bg_color = Color(0, 0, 0, 0.666667)
+
+[node name="HUD_Player" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54l0q")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2upbq")
+
+[node name="bugs_sprite" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = ExtResource("2_4tnrv")
+expand_mode = 1
+
+[node name="bugs_points" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_yjlmn")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+
+[node name="bugs_total" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 16.0
+offset_right = 196.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_yjlmn")
+theme_override_font_sizes/font_size = 24
+text = "/0"

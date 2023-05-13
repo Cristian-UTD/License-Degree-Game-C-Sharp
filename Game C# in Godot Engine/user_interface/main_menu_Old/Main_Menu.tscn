@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://b51esys4bl533"]
+
+[ext_resource type="Script" path="res://user_interface/main_menu_Old/Main_Menu_Old.cs" id="1_wbyid"]
+[ext_resource type="Texture2D" uid="uid://ufuy816hbik5" path="res://user_interface/main_menu_Old/Background/main_menu_4.png" id="2_t1o2h"]
+[ext_resource type="PackedScene" uid="uid://bvhm3gfk6xiwi" path="res://user_interface/settings_menu/settings_menu.tscn" id="3_rss5t"]
+
+[node name="Main_Menu_Old" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wbyid")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 712.0
+texture = ExtResource("2_t1o2h")
+expand_mode = 1
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Start_Button" type="Button" parent="Buttons"]
+offset_left = 72.0
+offset_top = 400.0
+offset_right = 344.0
+offset_bottom = 472.0
+text = "New"
+
+[node name="Options_Button" type="Button" parent="Buttons"]
+offset_left = 72.0
+offset_top = 488.0
+offset_right = 344.0
+offset_bottom = 560.0
+text = "Options"
+
+[node name="Quit_Button" type="Button" parent="Buttons"]
+offset_left = 72.0
+offset_top = 568.0
+offset_right = 344.0
+offset_bottom = 640.0
+text = "Quit"
+
+[node name="Options_Menu" parent="." instance=ExtResource("3_rss5t")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="Buttons/Start_Button" to="." method="_on_Start_Button_pressed"]
+[connection signal="pressed" from="Buttons/Options_Button" to="." method="_on_Options_Button_pressed"]
+[connection signal="pressed" from="Buttons/Quit_Button" to="." method="_on_Quit_Button_pressed"]
