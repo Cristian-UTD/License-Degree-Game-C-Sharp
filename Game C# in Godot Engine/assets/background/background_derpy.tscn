@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr6i7liwlkvyd"]
+
+[ext_resource type="Texture2D" uid="uid://bo76s6f8rmbbf" path="res://assets/background/Sprites/Purple_Dark.png" id="1_47b67"]
+[ext_resource type="Texture2D" uid="uid://snx2nepc4k0h" path="res://assets/background/Sprites/Purple_Light.png" id="2_d56nx"]
+[ext_resource type="Texture2D" uid="uid://ds3hf2e462xcn" path="res://assets/background/Sprites/Viginette.png" id="2_kx4y1"]
+[ext_resource type="Texture2D" uid="uid://dfqb3loq1tkar" path="res://assets/background/Sprites/Wire_Far.png" id="2_whxys"]
+[ext_resource type="Texture2D" uid="uid://bghpri0dccglh" path="res://assets/background/Sprites/Wire_Close.png" id="5_x06rv"]
+
+[node name="Background_Derpy" type="ParallaxBackground"]
+
+[node name="Background" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Purple_Dark" type="Sprite2D" parent="Background"]
+position = Vector2(640, 360)
+texture = ExtResource("1_47b67")
+
+[node name="Background_Light" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Light_Purple" type="Sprite2D" parent="Background_Light"]
+position = Vector2(640, 360)
+texture = ExtResource("2_d56nx")
+
+[node name="Wire Blurred" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Wires_Far" type="Sprite2D" parent="Wire Blurred"]
+position = Vector2(640, 360)
+texture = ExtResource("2_whxys")
+
+[node name="Wire Blurred 2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Wires Closer" type="Sprite2D" parent="Wire Blurred 2"]
+position = Vector2(640, 360)
+texture = ExtResource("5_x06rv")
+
+[node name="Viginette" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Viginette" type="Sprite2D" parent="Viginette"]
+position = Vector2(640, 360)
+texture = ExtResource("2_kx4y1")

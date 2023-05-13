@@ -1,0 +1,169 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwpgpxhcty4vs"]
+
+[ext_resource type="Script" path="res://assets/player/derpy.cs" id="1_833r3"]
+[ext_resource type="PackedScene" uid="uid://bbxpwa0vg7nue" path="res://user_interface/HUD_Player/HUD_Player.tscn" id="2_jyh2r"]
+[ext_resource type="Texture2D" uid="uid://doe5tu5sojl1b" path="res://assets/player/sprites/derpy_idle.png" id="3_lmf2v"]
+[ext_resource type="Texture2D" uid="uid://tpvdy86qnhci" path="res://assets/player/sprites/derpy_run.png" id="4_smonr"]
+[ext_resource type="Texture2D" uid="uid://dhfema1xbchgw" path="res://assets/player/sprites/derpy_jump_fall.png" id="5_s1bmf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybkxk"]
+size = Vector2(72, 40)
+
+[sub_resource type="Animation" id="Animation_rkv6m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites/sprite_derpy_idle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprites/sprite_derpy_run:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprites/sprite_derpy_jump:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprites/sprite_derpy_fall:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_g5b30"]
+resource_name = "derpy_idle"
+length = 3.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites/sprite_derpy_idle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 1, 4, 1, 2, 1, 5]
+}
+
+[sub_resource type="Animation" id="Animation_cc5px"]
+resource_name = "derpy_jump"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites/sprite_derpy_jump:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_4m0xw"]
+resource_name = "derpy_movement"
+length = 3.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites/sprite_derpy_run:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 4, 0, 2, 0, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ot5ee"]
+_data = {
+"RESET": SubResource("Animation_rkv6m"),
+"derpy_idle": SubResource("Animation_g5b30"),
+"derpy_jump": SubResource("Animation_cc5px"),
+"derpy_move": SubResource("Animation_4m0xw")
+}
+
+[node name="Derpy" type="CharacterBody2D"]
+script = ExtResource("1_833r3")
+
+[node name="HUD_Player" parent="." instance=ExtResource("2_jyh2r")]
+offset_left = -528.0
+offset_top = -296.0
+offset_right = -528.0
+offset_bottom = -296.0
+
+[node name="sprites" type="Node2D" parent="."]
+
+[node name="sprite_derpy_idle" type="Sprite2D" parent="sprites"]
+texture = ExtResource("3_lmf2v")
+hframes = 4
+vframes = 3
+frame = 1
+
+[node name="sprite_derpy_run" type="Sprite2D" parent="sprites"]
+visible = false
+texture = ExtResource("4_smonr")
+hframes = 4
+vframes = 3
+frame = 2
+
+[node name="sprite_derpy_jump" type="Sprite2D" parent="sprites"]
+visible = false
+texture = ExtResource("5_s1bmf")
+hframes = 3
+vframes = 3
+frame = 2
+
+[node name="sprite_derpy_fall" type="Sprite2D" parent="sprites"]
+visible = false
+texture = ExtResource("5_s1bmf")
+hframes = 3
+vframes = 3
+frame = 6
+
+[node name="collision_terrains" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ybkxk")
+
+[node name="camera_player" type="Camera2D" parent="."]
+zoom = Vector2(1.2, 1.2)
+editor_draw_drag_margin = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ot5ee")
+}

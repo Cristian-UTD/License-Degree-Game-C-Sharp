@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxytx6qutie4u"]
+
+[ext_resource type="PackedScene" uid="uid://bwpgpxhcty4vs" path="res://assets/player/derpy.tscn" id="1_sodny"]
+[ext_resource type="TileSet" uid="uid://cguxuvj0v882j" path="res://assets/terrains/terrains_test.tres" id="2_kluyk"]
+
+[node name="Test_map_2" type="Node2D"]
+
+[node name="Derpy" parent="." instance=ExtResource("1_sodny")]
+position = Vector2(707, 166)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_kluyk")
+format = 2
+layer_0/tile_data = PackedInt32Array(196617, 131072, 0, 196618, 131072, 0, 196619, 131072, 0, 196620, 131072, 0, 262157, 0, 2, 196621, 131072, 1, 327693, 0, 2, 393229, 0, 2, 458765, 131072, 2, 458764, 131072, 0, 458763, 131072, 0, 458762, 131072, 0, 458761, 131072, 0, 458760, 65536, 2, 393224, 0, 2, 327688, 0, 2, 262152, 0, 2, 196616, 65536, 1)

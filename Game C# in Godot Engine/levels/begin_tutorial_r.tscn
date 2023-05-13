@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://nv337h1xwvhu"]
+
+[ext_resource type="PackedScene" uid="uid://cr6i7liwlkvyd" path="res://assets/background/background_derpy.tscn" id="1_0wfj1"]
+[ext_resource type="TileSet" uid="uid://cguxuvj0v882j" path="res://assets/terrains/terrains_test.tres" id="2_tcpxe"]
+[ext_resource type="PackedScene" uid="uid://c2lj3qc5gvckv" path="res://assets/points_bugs/bugs_points.tscn" id="3_5871t"]
+[ext_resource type="FontFile" uid="uid://tkyc64ralymn" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_dfhmj"]
+[ext_resource type="PackedScene" uid="uid://bwpgpxhcty4vs" path="res://assets/player/derpy.tscn" id="4_xu0gb"]
+[ext_resource type="PackedScene" uid="uid://xskiml771max" path="res://assets/teleport/teleport.tscn" id="5_7bwk7"]
+
+[node name="begin_tutorial" type="Node2D"]
+
+[node name="Background_Derpy" parent="." instance=ExtResource("1_0wfj1")]
+
+[node name="Map" type="TileMap" parent="."]
+tile_set = ExtResource("2_tcpxe")
+format = 2
+layer_0/tile_data = PackedInt32Array(524293, 131072, 4, 524294, 131072, 4, 524295, 131072, 4, 524296, 131072, 4, 524297, 131072, 4, 524298, 131072, 4, 524299, 131072, 4, 196620, 131072, 5, 262156, 0, 6, 524300, 131072, 4, 524301, 131072, 4, 524302, 131072, 4, 524303, 131072, 4, 524304, 131072, 4, 524305, 131072, 4, 524306, 131072, 4, 524307, 131072, 4, 524308, 131072, 4, 524309, 131072, 6, 458773, 65536, 5, 458776, 131072, 5, 524312, 65536, 6, 524313, 131072, 4, 524314, 131072, 4, 524315, 131072, 4, 524316, 131072, 4, 524317, 131072, 4, 524318, 131072, 4, 524319, 131072, 4, 524320, 131072, 4, 524321, 131072, 4, 524322, 131072, 4, 524323, 131072, 4, 327708, 65536, 6, 327709, 131072, 4, 327710, 131072, 4, 327711, 131072, 4, 327712, 131072, 4, 327713, 131072, 6, 262177, 0, 6, 196641, 65536, 5, 196642, 131072, 6, 131106, 0, 6, 65570, 65536, 5, 65571, 131072, 4, 524324, 131072, 4, 524325, 131072, 4, 524326, 131072, 6, 458790, 0, 6, 393254, 0, 6, 327718, 65536, 5, 327721, 131072, 5, 393257, 0, 6, 458793, 0, 6, 524329, 65536, 6, 524330, 131072, 4, 524331, 131072, 4, 524332, 131072, 4, 524333, 131072, 4, 524334, 131072, 4, 524335, 131072, 4, 65572, 131072, 4, 65573, 131072, 4, 65574, 131072, 4, 65575, 131072, 4, 65576, 131072, 4, 65577, 131072, 4, 65578, 131072, 4, 65579, 131072, 4, 65580, 131072, 4, 131117, 0, 6, 65581, 131072, 5, 196653, 0, 6, 262189, 65536, 6, 327719, 131072, 4, 327720, 131072, 4, 458774, 131072, 4, 458775, 131072, 4, 262172, 131072, 5, 196634, 131072, 5, 196633, 131072, 4, 196632, 131072, 4, 196631, 131072, 4, 196630, 131072, 4, 196629, 131072, 4, 196628, 131072, 4, 196627, 65536, 5, 327692, 65536, 6, 327693, 131072, 4, 327694, 131072, 4, 327695, 131072, 4, 327696, 131072, 4, 327697, 131072, 6, 262163, 131072, 6, 262161, 65536, 5, 262162, 131072, 4, 262170, 65536, 6, 262171, 131072, 4, 262191, 131072, 4, 262190, 131072, 4, 262192, 131072, 4, 524336, 131072, 4, 262193, 131072, 4, 524337, 131072, 4, 262194, 131072, 4, 524338, 131072, 4, 262195, 131072, 4, 524339, 131072, 4, 262196, 131072, 4, 524340, 131072, 4, 262197, 131072, 4, 524341, 131072, 4, 262198, 131072, 6, 524342, 131072, 4, 196663, 131072, 4, 524343, 131072, 4, 196664, 131072, 4, 524344, 131072, 4, 196665, 131072, 4, 524345, 131072, 4, 196666, 131072, 4, 393274, 458752, 4, 524346, 131072, 4, 196667, 131072, 4, 393275, 458752, 4, 524347, 131072, 4, 196668, 131072, 4, 393276, 524288, 4, 524348, 131072, 4, 196669, 131072, 4, 524349, 131072, 4, 196670, 131072, 4, 524350, 131072, 4, 196671, 131072, 5, 524351, 131072, 4, 262208, 131072, 4, 524352, 131072, 4, 262209, 131072, 4, 524353, 131072, 4, 262210, 131072, 4, 524354, 131072, 4, 262211, 131072, 4, 524355, 131072, 4, 262212, 131072, 4, 524356, 131072, 4, 262213, 131072, 4, 524357, 131072, 4, 262214, 131072, 6, 524358, 131072, 4, 131143, 131072, 4, 524359, 131072, 4, 131144, 131072, 4, 524360, 131072, 4, 131145, 131072, 4, 524361, 131072, 4, 131146, 131072, 4, 524362, 131072, 4, 131147, 131072, 4, 393291, 131072, 4, 524363, 131072, 4, 131148, 131072, 4, 393292, 131072, 4, 524364, 131072, 4, 131149, 131072, 4, 393293, 196608, 4, 524365, 131072, 4, 131150, 131072, 4, 524366, 131072, 4, 131151, 131072, 5, 524367, 131072, 6, 196662, 65536, 5, 393273, 393216, 4, 262207, 65536, 6, 131142, 65536, 5, 196678, 0, 6, 393290, 65536, 4, 196687, 0, 6, 262223, 0, 6, 327759, 0, 6, 393295, 0, 6, 458831, 0, 6, 524292, 65536, 6, 458756, 0, 6, 393220, 0, 6, 327684, 0, 6, 262148, 0, 6, 196612, 65536, 5, 196613, 131072, 4, 196614, 131072, 4, 196615, 131072, 4, 196616, 131072, 4, 196617, 131072, 4, 196618, 131072, 4, 196619, 131072, 4)
+
+[node name="Text" type="Node2D" parent="."]
+position = Vector2(3320, 463)
+
+[node name="text_movement" type="Label" parent="Text"]
+offset_left = -2776.0
+offset_top = -31.0
+offset_right = -2496.0
+offset_bottom = -5.0
+theme_override_fonts/font = ExtResource("3_dfhmj")
+theme_override_font_sizes/font_size = 10
+text = "Press A, D or arrows to move"
+
+[node name="text_jump" type="Label" parent="Text"]
+offset_left = -2224.0
+offset_top = -23.0
+offset_right = -2004.0
+offset_bottom = 3.0
+theme_override_fonts/font = ExtResource("3_dfhmj")
+theme_override_font_sizes/font_size = 10
+text = "Press Spacebar to jump"
+
+[node name="text_high_jump" type="Label" parent="Text"]
+offset_left = -1168.0
+offset_top = -31.0
+offset_right = -858.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("3_dfhmj")
+theme_override_font_sizes/font_size = 10
+text = "Hold CTRL and press 
+Spacebar to jumper higher"
+
+[node name="text_bug" type="Label" parent="Text"]
+offset_left = -32.0
+offset_top = -79.0
+offset_right = 298.0
+offset_bottom = -7.0
+theme_override_fonts/font = ExtResource("3_dfhmj")
+theme_override_font_sizes/font_size = 10
+text = "That's a bug, you had to eat them 
+so can receive points.
+Go to it and eat it, so you can 
+receive point"
+
+[node name="text_teleport" type="Label" parent="Text"]
+offset_left = 1120.0
+offset_top = -47.0
+offset_right = 1370.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("3_dfhmj")
+theme_override_font_sizes/font_size = 10
+text = "That's a teleport 
+Can be used to next level 
+after eating all bugs"
+
+[node name="bugs" type="Node2D" parent="."]
+
+[node name="bugs_area_point" parent="bugs" instance=ExtResource("3_5871t")]
+position = Vector2(3776, 360)
+
+[node name="Derpy" parent="." instance=ExtResource("4_xu0gb")]
+position = Vector2(464, 496)
+
+[node name="teleport" parent="." instance=ExtResource("5_7bwk7")]
+position = Vector2(4864, 336)
