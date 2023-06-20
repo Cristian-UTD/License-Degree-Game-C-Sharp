@@ -7,5 +7,8 @@ Some images of the game:
 
 ![fig 1](https://github.com/Cristian-UTD/License-Degree-Game-C-Sharp/assets/108021735/9b708396-910a-4293-92e5-48cf3fb4f56c)
 
+![fig 2](https://github.com/Cristian-UTD/License-Degree-Game-C-Sharp/assets/108021735/a386e46e-846f-4d44-975e-51de1d5cd789)
+
+![fig 4](https://github.com/Cristian-UTD/License-Degree-Game-C-Sharp/assets/108021735/dc89ab06-aa8a-46e1-a465-5d94c908cac7)
 
 The codes are mostly in the assests and user_interface, every code have comments (in Romania) explaining what line of code doing. The codes can be more efficiently, but it's my first time that I made a game, but still feel proud how it is, also there's a lot of improvement to this game in the future.
